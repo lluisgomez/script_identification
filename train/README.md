@@ -11,7 +11,7 @@ make
 
 1. Learn the filter banks and save them into "first_layer_filters.xml":
 ```
-./extract_filters data/TrainDataset_CVSI2015/Arabic_labels.txt data/TrainDataset_CVSI2015/Bengali_labels.txt data/TrainDataset_CVSI2015/English_labels.txt data/TrainDataset_CVSI2015/Gujrathi_labels.txt data/TrainDataset_CVSI2015/Hindi_labels.txt data/TrainDataset_CVSI2015/Kannada_labels.txt data/TrainDataset_CVSI2015/Oriya_labels.txt data/TrainDataset_CVSI2015/Punjabi_labels.txt data/TrainDataset_CVSI2015/Tamil_labels.txt data/TrainDataset_CVSI2015/Telegu_labels.txt
+./extract_filters data/TrainDataset_CVSI2015/*_labels.txt 
 ```
 where the txt files contain "filename label" for every image in the train dataset.
 
