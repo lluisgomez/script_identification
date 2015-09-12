@@ -19,7 +19,6 @@ int main (int argc, char* argv[])
   {
      cout << argv[0] << ": Train first layer filters with kmeans." << endl;
      cout << "   Usage " << argv[0] << " <dataset file(s) with train images and labels>" << endl;
-     cout << "   e.g.  " << argv[0] << " data/characters/icdar/img_ICDAR_train_labels.txt data/characters/chars74k/img_labels.txt data/characters/synthetic/img_labels.txt" << endl;
      exit(0);
   }
 
@@ -102,7 +101,7 @@ int main (int argc, char* argv[])
  
 
 
-  FileStorage fs("first_layer_centroids.xml", FileStorage::WRITE);
+  FileStorage fs("first_layer_filters.xml", FileStorage::WRITE);
   fs << "D" << centroids;
   fs << "M" << M;
   fs << "P" << P;
