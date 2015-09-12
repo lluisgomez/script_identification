@@ -1,9 +1,9 @@
 
 # Scene Text Script Identification
 
-Sinle Layer Convolutional Neural Net trained for script identification combined with a classifier based in Naive Bayes Nearest Neighbor (NBNN). For the NBNN classification we learn specific Image2Class distances by leveraging the search space topology.
+Single Layer Convolutional Neural Net trained for script identification combined with a classifier based in Naive Bayes Nearest Neighbor (NBNN). For the NBNN classification we learn specific Image2Class distances by leveraging the search space topology.
 
-# Compilation
+## Compilation
 
 Dependencies: OpenCV-3.0.0 must be installed in the host system. 
 
@@ -12,7 +12,7 @@ cmake .
 make
 ```
 
-# Demo
+## Demo
 
 Reproduce the results on the CVSI2015 dataset:
 
@@ -29,7 +29,7 @@ Reproduce the results on the Babel_01 dataset:
 will produce a single file with results for all the images (one per line).
 
 
-# Data
+## Data
 
 Since our method uses Nearest Neighbor for classification all training data must be available to run our programs. All needed data files are compressed into a single bz2 file (929Mb) that can be downloaded here:
 
@@ -38,7 +38,7 @@ Since our method uses Nearest Neighbor for classification all training data must
 
 All data files must be placed in the same folder as the binaries.
 
-# Train
+## Train
 
 To generate the convolutional kernels and training data see README.md file in train folder.
 
