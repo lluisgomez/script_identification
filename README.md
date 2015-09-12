@@ -33,8 +33,8 @@ will produce a single file with results for all the images (one per line).
 
 Since our method uses Nearest Neighbor for classification all training data must be available to run our programs. All needed data files are compressed into a single bz2 file (929Mb) that can be downloaded here:
 
- - http://158.109.8.43/textlocation/script_identification_cvsi_data.tar.bz2
- - http://158.109.8.43/textlocation/script_identification_babel_data.tar.bz2
+ - http://158.109.8.43/script_identification/script_identification_cvsi_data.tar.bz2
+ - http://158.109.8.43/script_identification/script_identification_babel_data.tar.bz2
 
 All data files must be placed in the same folder as the binaries.
 
