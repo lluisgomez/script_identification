@@ -13,25 +13,7 @@ using namespace std;
 int main(int argc, char** argv)
 {
 
-  cout << "Loading learned Metrics ... "; cout.flush();
-
-  // Load the Learned Metric Matrices
-  FileStorage fs("LearnedMetrics_IDENTITY.xml", FileStorage::READ);
-  Mat L1; fs["L1"] >>L1;
-  Mat L2; fs["L2"] >>L2;
-  Mat L3; fs["L3"] >>L3;
-  Mat L4; fs["L4"] >>L4;
-
-  fs.release();
-
-  L1 = Mat::eye(1737,1737,CV_32F);
-  L2 = Mat::eye(1737,1737,CV_32F);
-  L3 = Mat::eye(1737,1737,CV_32F);
-  L4 = Mat::eye(1737,1737,CV_32F);
-
-  cout << "done!" << endl; cout.flush();
-
-  //K neighbours
+  // KNN neighbours
   int k=1;
   // KdTree with 5 random trees
   flann::KDTreeIndexParams indexParams(5);
@@ -46,8 +28,6 @@ int main(int argc, char** argv)
   Mat feats_Latin = data_Latin->getTrainSamples();
   //cout << "Latin: Loaded " << feats_Latin.rows << " samples, " << feats_Latin.cols 
   //                                  << "-D"<<endl;
-  // Learned Linear transformation 
-  feats_Latin = feats_Latin*L1;
   // Create the Index
   flann::Index kdtree_Latin(feats_Latin, indexParams);
   // Save the index
@@ -62,8 +42,6 @@ int main(int argc, char** argv)
   Mat feats_Chinese = data_Chinese->getTrainSamples();
   //cout << "Chinese: Loaded " << feats_Chinese.rows << " samples, " << feats_Chinese.cols 
   //                                 << "-D"<<endl;
-  // Learned Linear transformation 
-  feats_Chinese = feats_Chinese*L2;
   // Create the Index
   flann::Index kdtree_Chinese(feats_Chinese, indexParams);
   // Save the index
@@ -78,8 +56,6 @@ int main(int argc, char** argv)
   Mat feats_Kannada = data_Kannada->getTrainSamples();
   //cout << "Kannada: Loaded " << feats_Kannada.rows << " samples, " << feats_Kannada.cols 
   //                                  << "-D"<<endl;
-  // Learned Linear transformation 
-  feats_Kannada = feats_Kannada*L3;
   // Create the Index
   flann::Index kdtree_Kannada(feats_Kannada, indexParams);
   // Save the index
@@ -94,8 +70,6 @@ int main(int argc, char** argv)
   Mat feats_Korean = data_Korean->getTrainSamples();
   //cout << "Korean: Loaded " << feats_Korean.rows << " samples, " << feats_Korean.cols 
   //                                 << "-D"<<endl;
-  // Learned Linear transformation 
-  feats_Korean = feats_Korean*L4;
   // Create the Index
   flann::Index kdtree_Korean(feats_Korean, indexParams);
   // Save the index
@@ -309,36 +283,28 @@ int main(int argc, char** argv)
       Mat indices;
       Mat dists;
      
-      // Learned Linear transformation 
-      Mat t_query = query*L1;
-      kdtree_Latin.knnSearch(t_query, indices, dists, k, flann::SearchParams(64));
+      kdtree_Latin.knnSearch(query, indices, dists, k, flann::SearchParams(64));
       for(int row = 0 ; row < indices.rows ; row++)
         for(int col = 0 ; col < indices.cols ; col++)
           I2Cdistances[0] += dists.at<float>(row,col) * 
                              (1 - weights_Latin.at<float>(indices.at<float>(row,col),0));
       //cout << "Image To Class (Latin) Distance:: "<< I2Cdistances[0] << endl;
      
-      // Learned Linear transformation 
-      t_query = query*L2;
-      kdtree_Chinese.knnSearch(t_query, indices, dists, k, flann::SearchParams(64));
+      kdtree_Chinese.knnSearch(query, indices, dists, k, flann::SearchParams(64));
       for(int row = 0 ; row < indices.rows ; row++)
         for(int col = 0 ; col < indices.cols ; col++)
           I2Cdistances[1] += dists.at<float>(row,col) *
                              (1 - weights_Chinese.at<float>(indices.at<float>(row,col),0));
       //cout << "Image To Class (Chinese) Distance:: "<< I2Cdistances[1] << endl;
      
-      // Learned Linear transformation 
-      t_query = query*L3;
-      kdtree_Kannada.knnSearch(t_query, indices, dists, k, flann::SearchParams(64));
+      kdtree_Kannada.knnSearch(query, indices, dists, k, flann::SearchParams(64));
       for(int row = 0 ; row < indices.rows ; row++)
         for(int col = 0 ; col < indices.cols ; col++)
           I2Cdistances[2] += dists.at<float>(row,col) *
                              (1 - weights_Kannada.at<float>(indices.at<float>(row,col),0));
       //cout << "Image To Class (Kannada) Distance:: "<< I2Cdistances[2] << endl;
      
-      // Learned Linear transformation 
-      t_query = query*L4;
-      kdtree_Korean.knnSearch(t_query, indices, dists, k, flann::SearchParams(64));
+      kdtree_Korean.knnSearch(query, indices, dists, k, flann::SearchParams(64));
       for(int row = 0 ; row < indices.rows ; row++)
         for(int col = 0 ; col < indices.cols ; col++)
           I2Cdistances[3] += dists.at<float>(row,col) * 
