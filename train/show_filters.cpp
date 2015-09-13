@@ -26,6 +26,6 @@ int main (int argc, char* argv[])
 
 
   /*Visualize the filter bank*/
-  visualizeNatwork(filters);
+  visualizeNetwork(filters);
 
 }

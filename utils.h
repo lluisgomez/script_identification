@@ -158,7 +158,7 @@ void selectCentroids(Mat& centroids, double varthresh)
 }
 
 /*Visualize the filter bank*/
-void visualizeNatwork(Mat& centroids)
+void visualizeNetwork(Mat& centroids)
 {
 
   int K = centroids.rows;

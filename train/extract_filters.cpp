@@ -108,6 +108,6 @@ int main (int argc, char* argv[])
 
 
   /*Visualize the filter bank*/
-  visualizeNatwork(centroids);
+  visualizeNetwork(centroids);
 
 }
