@@ -20,7 +20,6 @@ int main (int argc, char* argv[])
   {
      cout << argv[0] << ": Extract features for a set of images. " << endl;
      cout << "   Usage " << argv[0] << " <file storage with precomputed filters> <dataset file with train images and labels>" << endl;
-     cout << "   e.g.  " << argv[0] << " first_layer_centroids.xml data/img_all_labels.txt" << endl;
      exit(0);
   }
 
@@ -156,40 +155,5 @@ int main (int argc, char* argv[])
       }
     }
   }
-
-/*
-    int cnt = 0;
-    while (cnt < num_patches_x_image)
-    {
-      int x = rand() % (img.cols-patch_width);
-      int y = rand() % (img.rows-patch_height);
-      Mat patch;
-      img(Rect(x,y,patch_width,patch_height)).copyTo(patch);
-      patch.convertTo(patch, CV_64FC1);
-
-      patch = patch.reshape(0,1);
-      patch.copyTo(patches.row(patch_counter));
-
-      patch_counter++;
-      cnt++;
-    }
-  }
-
-  Mat M, P;
-  normalizeAndZCA(patches, M, P);
-
-
-  //Uses dot-product Kmeans to learn a specified number of bases
-  Mat centroids;
-  run_projection_kmeans(patches, centroids, K, n_iter);
-
-  //discard filters with low variance
-  double varthresh = 0.025;
-  selectCentroids(centroids, varthresh);
- 
-
-*/
-
-
 
 }
