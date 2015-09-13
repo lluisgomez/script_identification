@@ -18,7 +18,7 @@ int main (int argc, char* argv[])
 
 
   Mat filters, M, P;
-  FileStorage fs("first_layer_centroids.xml", FileStorage::READ);
+  FileStorage fs("first_layer_filters.xml", FileStorage::READ);
   fs["D"] >> filters;
   fs["M"] >> M;
   fs["P"] >> P;
