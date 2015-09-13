@@ -29,8 +29,7 @@ int main (int argc, char* argv[])
 
     ifstream infile(argv[f]);
     string path = string(argv[f]);
-    path.erase(path.end()-11,path.end());
-    path.append("/");
+    path = path.substr(0,path.find_last_of("/")+1);
 
     int label;
     string filename;
