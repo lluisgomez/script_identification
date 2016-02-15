@@ -20,10 +20,10 @@ Reproduce the results on the CVSI2015 dataset:
 ./cvsi_ClassifyAllScripts /path/to/TestDataset_CVSI2015/*jpg OutCVSIResults.txt
 ```
 
-Reproduce the results on the Babel_01 dataset:
+Reproduce the results on the MLe2e dataset:
 
 ```
-./babel_ClassifyAllScripts /path/to/Babel_01/test/*jpg OutBabelResults.txt
+./mle2e_ClassifyAllScripts /path/to/MLe2e/test/*jpg OutMLe2eResults.txt
 ```
 
 will produce a single file with results for all the images (one per line).
@@ -34,7 +34,7 @@ will produce a single file with results for all the images (one per line).
 Since our method uses Nearest Neighbor for classification all training data must be available to run our programs. All needed data files are compressed into a single bz2 file (929Mb) that can be downloaded here:
 
  - http://158.109.8.43/script_identification/script_identification_cvsi_data.tar.bz2
- - http://158.109.8.43/script_identification/script_identification_babel_data.tar.bz2
+ - http://158.109.8.43/script_identification/script_identification_mle2e_data.tar.bz2
 
 All data files must be placed in the same folder as the binaries.
 
