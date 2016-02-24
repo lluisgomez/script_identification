@@ -66,16 +66,16 @@ First we train the simple network:
 
 
 ```
-cd ../
+cd ../../
 
-/path_to_caffe/build/tools/caffe train --solver=siw13_simple_5_3_3_1/solver.prototxt
+/path_to_caffe/build/tools/caffe train --solver=caffe_models/siw13_simple_5_3_3_1/solver.prototxt
 ```
 
 Then we do the finetuning on the ECN:
 
 
 ```
-/path_to_caffe/build/tools/caffe train --solver=siw13_ECNx10_5_3_3_1/solver.prototxt --weights=siw13_simple_5_3_3_1/siw13_simple_5_3_3_1_train_iter_110000.caffemodel
+/path_to_caffe/build/tools/caffe train --solver=caffe_models/siw13_ECNx10_5_3_3_1/solver.prototxt --weights=caffe_models/siw13_simple_5_3_3_1/siw13_simple_5_3_3_1_train_iter_110000.caffemodel
 ```
 
 ### Test
