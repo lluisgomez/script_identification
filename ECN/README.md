@@ -21,7 +21,7 @@ make
 Reproduce the results on the SIW13 dataset:
 
 
-# Prepare the data
+### Prepare the data
 
 First of all you must copy the SIW13 original file stricture into data/orig/ folder. Then we densely extract patches from the original images and build a txt file with "patch-filename label" format :
 
@@ -60,7 +60,7 @@ cd ../siw13_ECNx10_5_3_3_1/
 
 ```
 
-# Training
+### Training
 
 First we train the simple network:
 
@@ -78,7 +78,7 @@ Then we do the finetuning on the ECN:
 /path_to_caffe/build/tools/caffe train --solver=siw13_ECNx10_5_3_3_1/solver.prototxt --weights=siw13_simple_5_3_3_1/siw13_simple_5_3_3_1_train_iter_110000.caffemodel
 ```
 
-# Test
+### Test
 
 Now you have the ECN trained model, and can deploy it on test data to obtain SIW13 overall classification accuracy as follows:
 
