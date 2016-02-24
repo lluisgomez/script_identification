@@ -1,21 +1,26 @@
-CMakeCache.txt
-CMakeFiles/
-Makefile
-cmake_install.cmake
+UFL/CMakeCache.txt
+UFL/CMakeFiles/
+UFL/Makefile
+UFL/cmake_install.cmake
 
-train/CMakeCache.txt
-train/CMakeFiles/
-train/Makefile
-train/cmake_install.cmake
+UFL/train/CMakeCache.txt
+UFL/train/CMakeFiles/
+UFL/train/Makefile
+UFL/train/cmake_install.cmake
 
-babel_ClassifyAllScripts
-babel_ClassifyAllScriptsWeighted
-cvsi_ClassifyAllScripts
-cvsi_ClassifyAllScriptsWeighted
-eval.sh
-OutCVSIResults.txt
+UFL/babel_ClassifyAllScripts
+UFL/babel_ClassifyAllScriptsWeighted
+UFL/cvsi_ClassifyAllScripts
+UFL/cvsi_ClassifyAllScriptsWeighted
+UFL/eval.sh
+UFL/OutCVSIResults.txt
 
-train/data/
-train/extract_features
-train/extract_filters
-train/show_filters
+UFL/train/data/
+UFL/train/extract_features
+UFL/train/extract_filters
+UFL/train/show_filters
+
+ECN/CMakeCache.txt
+ECN/CMakeFiles/
+ECN/Makefile
+ECN/cmake_install.cmake

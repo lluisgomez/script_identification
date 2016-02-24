@@ -1,44 +1,35 @@
 
 # Scene Text Script Identification
 
-Single Layer Convolutional Neural Net trained for script identification combined with a classifier based in Naive Bayes Nearest Neighbor (NBNN). For the NBNN classification we learn specific Image2Class distances by leveraging the search space topology.
+This code repository contains the implementation of Script Identification methods proposed in the following papers:
 
-## Compilation
+1. "A fine-grained approach to scene text script identification" (Gomez & Karatzas) to appear in DAS 2016 workshop proceedings
 
-Dependencies: OpenCV-3.0.0 must be installed in the host system. 
+2. "Boosting patch-based scene text script identification with ensembles of conjoined networks" (Gomez, Nicolaou, and Karatzas) 2016 pre-rpint
+
+
+Each code project is selfcontained in its own directory (1) **UFL/** and (2) **ECN/**, and is totally independent of the other. They share a common github repository just because (2) is an evolution of (1). 
+
+See the README files on each directory for specific instructions on compiling/using this code.
+
+
+Please, if you make use of any of this projects, we appreciate it if you cite the respective paper(s):
+
 
 ```
-cmake .
-make
+@inproceedings{GomezDAS2016,
+  author    = {Lluis Gomez and Dimosthenis Karatzas},
+  title     = {A fine-grained approach to scene text script identification},
+  booktitle = {DAS},
+  year      = {2016},
+}
 ```
 
-## Demo
-
-Reproduce the results on the CVSI2015 dataset:
-
 ```
-./cvsi_ClassifyAllScripts /path/to/TestDataset_CVSI2015/*jpg OutCVSIResults.txt
+@article{GomezARXIV2016,
+  author    = {Lluis Gomez, Anguelos Nicolaou, Dimosthenis Karatzas},
+  title     = {Boosting patch-based scene text script identification with ensembles of conjoined networks},
+  journal   = {ArXiv},
+  year      = {2016},
+}
 ```
-
-Reproduce the results on the MLe2e dataset:
-
-```
-./mle2e_ClassifyAllScripts /path/to/MLe2e/test/*jpg OutMLe2eResults.txt
-```
-
-will produce a single file with results for all the images (one per line).
-
-
-## Data
-
-Since our method uses Nearest Neighbor for classification all training data must be available to run our programs. All needed data files are compressed into a single bz2 file (929Mb) that can be downloaded here:
-
- - http://158.109.8.43/script_identification/script_identification_cvsi_data.tar.bz2
- - http://158.109.8.43/script_identification/script_identification_mle2e_data.tar.bz2
-
-All data files must be placed in the same folder as the binaries.
-
-## Train
-
-To generate the convolutional kernels and training data see README.md file in train folder.
-
