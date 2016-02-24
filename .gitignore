@@ -20,7 +20,11 @@ UFL/train/extract_features
 UFL/train/extract_filters
 UFL/train/show_filters
 
-ECN/CMakeCache.txt
-ECN/CMakeFiles/
-ECN/Makefile
-ECN/cmake_install.cmake
+ECN/tools/CMakeCache.txt
+ECN/tools/CMakeFiles/
+ECN/tools/Makefile
+ECN/tools/cmake_install.cmake
+
+ECN/tools/compute_image_mean_ECN
+ECN/tools/convert_imageset_ECN
+ECN/tools/eval_siw13

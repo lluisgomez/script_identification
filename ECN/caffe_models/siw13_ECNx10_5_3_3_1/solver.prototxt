@@ -1,0 +1,14 @@
+net: "caffe_models/siw13_ECNx10_5_3_3_1/train_val.prototxt"
+test_iter: 1000
+test_interval: 1000
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 7000
+display: 20
+max_iter: 50000
+momentum: 0.9
+weight_decay: 0.0005
+snapshot: 1000
+snapshot_prefix: "caffe_models/siw13_ECNx10_5_3_3_1/siw13_ECNx10_5_3_3_1_train"
+solver_mode: GPU
