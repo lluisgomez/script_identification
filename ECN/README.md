@@ -35,7 +35,7 @@ python ../scripts/extract_train_patches.py > ../caffe_models/siw13_simple_5_3_3_
 Then we do the same but in this case for groups of 10 patches (this is the input to the ECN) :
 
 ```
-python ../scripts/extract_train_patches_ECN.py > ../../siw13_ECNx10_5_3_3_1/train_data.txt
+python ../scripts/extract_train_patches_ECN.py > ../caffe_models/siw13_ECNx10_5_3_3_1/train_data.txt
 ```
 
 Now we build the train/val databases and the mean train image in order to train the simple network first:
@@ -54,7 +54,7 @@ Same for the ECN:
 ```
 cd ../siw13_ECNx10_5_3_3_1/
 
-../../tools/convert_imageset_ECN -backend leveldb -gray -shuffle ./ test_data.txt test_leveldb
+../../tools/convert_imageset_ECN -backend leveldb -gray -shuffle ./ train_data.txt train_leveldb
 
 ../../tools/compute_image_mean_ECN -backend leveldb ../siw13_simple_5_3_3_1/train_leveldb image_mean.binaryproto 
 
