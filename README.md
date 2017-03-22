@@ -41,4 +41,4 @@ Please, if you make use of any of this projects, we appreciate it if you cite th
 
 The Multi-Language end-to-end (MLe2e) dataset can be downloaded using the following link:
 
- - https://dl.dropboxusercontent.com/u/45812668/MLe2e_Dataset_v02.zip
+ - https://www.dropbox.com/s/zf8t1ptfbpqhunc/MLe2e_Dataset_v02.zip?dl=0
