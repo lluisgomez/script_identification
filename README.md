@@ -5,7 +5,7 @@ This code repository contains the implementation of Script Identification method
 
 1. "A fine-grained approach to scene text script identification" (Gomez & Karatzas) to appear in DAS 2016 workshop proceedings
 
-2. "Boosting patch-based scene text script identification with ensembles of conjoined networks" (Gomez, Nicolaou, and Karatzas) 2016 pre-rpint
+2. "Boosting patch-based scene text script identification with ensembles of conjoined networks" (Gomez, Nicolaou, and Karatzas) 2017 Pattern Recognition
 
 
 Each code project is selfcontained in its own directory (1) **UFL/** and (2) **ECN/**, and is totally independent of the other. They share a common github repository just because (2) is an evolution of (1). 
@@ -26,11 +26,14 @@ Please, if you make use of any of this projects, we appreciate it if you cite th
 ```
 
 ```
-@article{GomezARXIV2016,
-  author    = {Lluis Gomez, Anguelos Nicolaou, Dimosthenis Karatzas},
-  title     = {Boosting patch-based scene text script identification with ensembles of conjoined networks},
-  journal   = {ArXiv},
-  year      = {2016},
+@article{gomez2017improving,
+  title={Improving patch-based scene text script identification with ensembles of conjoined networks},
+  author={Gomez, Lluis and Nicolaou, Anguelos and Karatzas, Dimosthenis},
+  journal={Pattern Recognition},
+  volume={67},
+  pages={85--96},
+  year={2017},
+  publisher={Elsevier}
 }
 ```
 
